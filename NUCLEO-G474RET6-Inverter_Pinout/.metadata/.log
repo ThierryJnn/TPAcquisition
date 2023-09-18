@@ -1,0 +1,18 @@
+!SESSION 2023-09-18 15:49:41.896 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-09-18 15:49:56.513
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-09-18 15:49:56.521
+!MESSAGE Log4j2 initialized with config file C:\Users\thier\Documents\git\TPAcquisition\NUCLEO-G474RET6-Inverter_Pinout\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-09-18 15:49:58.524
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-09-18 15:50:19.823
+!MESSAGE Indexed 'NUCLEO-G474RET6-Inverter_Pinout' (27 sources, 121 headers) in 3.66 sec: 14,821 declarations; 91,641 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.16%)
