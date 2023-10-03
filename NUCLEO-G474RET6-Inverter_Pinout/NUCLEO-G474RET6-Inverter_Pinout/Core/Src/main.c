@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "string.h"
+#include "processCommand.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,7 +100,6 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  char message[] = "Hello, World!\r\n";
   HAL_UART_Receive_IT(&huart2, uartRxBuffer, 1);
 
   /* USER CODE END 2 */
@@ -110,9 +110,10 @@ int main(void)
   {
 	  if(it_uart2){
 		  if(uartRxBuffer[0]==ENTER){
-			  HAL_UART_Transmit(&huart2, "\r\n", 5, 100);
+			  HAL_UART_Transmit(&huart2, "\r\n", 2, HAL_MAX_DELAY);
+			  processCommand(command); // Traitez la commande
+			  memset(command, 0, sizeof(command)); // Réinitialisez le tableau
 			  idx=0;
-			  //fonction pour traiter "command" et faire la fonction associée
 		  }
 		  else{
 			  command[idx++]=uartRxBuffer[0];
