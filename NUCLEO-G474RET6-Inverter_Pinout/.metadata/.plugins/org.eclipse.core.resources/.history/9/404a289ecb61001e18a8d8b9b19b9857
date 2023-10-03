@@ -26,7 +26,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "string.h"
-#include "stdbool.h"
 #include "processCommand.h"
 /* USER CODE END Includes */
 
