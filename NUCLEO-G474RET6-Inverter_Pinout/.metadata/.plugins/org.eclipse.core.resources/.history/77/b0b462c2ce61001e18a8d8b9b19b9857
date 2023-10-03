@@ -20,7 +20,6 @@ void processCommand(char* command) {
     HAL_UART_Transmit(&huart2, "Commandes disponibles :\r\n", strlen("Commandes disponibles :\r\n"), HAL_MAX_DELAY);
     HAL_UART_Transmit(&huart2, " - help : Affiche ce message d'aide\r\n", strlen(" - help : Affiche ce message d'aide\r\n"), HAL_MAX_DELAY);
     // Ajoutez d'autres commandes et leurs descriptions ici
-    return 0;
   }
   if (strcmp(command, "pinout") == 0) {
 	  pinout(); // Appeler la fonction pinout
