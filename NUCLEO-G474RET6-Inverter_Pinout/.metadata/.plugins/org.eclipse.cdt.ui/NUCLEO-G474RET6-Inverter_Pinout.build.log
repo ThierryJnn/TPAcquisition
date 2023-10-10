@@ -1,81 +1,10 @@
-11:25:14 **** Incremental Build of configuration Debug for project NUCLEO-G474RET6-Inverter_Pinout ****
+11:09:45 **** Incremental Build of configuration Debug for project NUCLEO-G474RET6-Inverter_Pinout ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/processCommand.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/processCommand.d" -MT"Core/Src/processCommand.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/processCommand.o"
-../Core/Src/processCommand.c: In function 'processCommand':
-../Core/Src/processCommand.c:20:32: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-   20 |     HAL_UART_Transmit(&huart2, "Commandes disponibles :\r\n", strlen("Commandes disponibles :\r\n"), HAL_MAX_DELAY);
-      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                                |
-      |                                char *
-In file included from ../Core/Inc/stm32g4xx_hal_conf.h:348,
-                 from ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Inc/adc.h:29,
-                 from ../Core/Src/processCommand.c:8:
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:1611:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1611 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-../Core/Src/processCommand.c:21:32: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-   21 |     HAL_UART_Transmit(&huart2, " - help : Affiche ce message d'aide\r\n", strlen(" - help : Affiche ce message d'aide\r\n"), HAL_MAX_DELAY);
-      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                                |
-      |                                char *
-In file included from ../Core/Inc/stm32g4xx_hal_conf.h:348,
-                 from ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Inc/adc.h:29,
-                 from ../Core/Src/processCommand.c:8:
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:1611:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1611 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-../Core/Src/processCommand.c:23:12: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   23 |     return 0;
-      |            ^
-../Core/Src/processCommand.c:17:6: note: declared here
-   17 | void processCommand(char* command) {
-      |      ^~~~~~~~~~~~~~
-../Core/Src/processCommand.c:27:18: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   27 |           return 0;
-      |                  ^
-../Core/Src/processCommand.c:17:6: note: declared here
-   17 | void processCommand(char* command) {
-      |      ^~~~~~~~~~~~~~
-../Core/Src/processCommand.c:31:18: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   31 |           return 0;
-      |                  ^
-../Core/Src/processCommand.c:17:6: note: declared here
-   17 | void processCommand(char* command) {
-      |      ^~~~~~~~~~~~~~
-../Core/Src/processCommand.c:35:18: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   35 |           return 0;
-      |                  ^
-../Core/Src/processCommand.c:17:6: note: declared here
-   17 | void processCommand(char* command) {
-      |      ^~~~~~~~~~~~~~
-../Core/Src/processCommand.c:38:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-   38 |           HAL_UART_Transmit(&huart2, "Command not found\r\n", strlen("Command not found\r\n"), HAL_MAX_DELAY);
-      |                                      ^~~~~~~~~~~~~~~~~~~~~~~
-      |                                      |
-      |                                      char *
-In file included from ../Core/Inc/stm32g4xx_hal_conf.h:348,
-                 from ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Inc/adc.h:29,
-                 from ../Core/Src/processCommand.c:8:
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:1611:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1611 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-arm-none-eabi-gcc -o "NUCLEO-G474RET6-Inverter_Pinout.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\thier\Documents\git\TPAcquisition\NUCLEO-G474RET6-Inverter_Pinout\NUCLEO-G474RET6-Inverter_Pinout\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO-G474RET6-Inverter_Pinout.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: NUCLEO-G474RET6-Inverter_Pinout.elf
- 
 arm-none-eabi-size   NUCLEO-G474RET6-Inverter_Pinout.elf 
-arm-none-eabi-objdump -h -S  NUCLEO-G474RET6-Inverter_Pinout.elf  > "NUCLEO-G474RET6-Inverter_Pinout.list"
    text	   data	    bss	    dec	    hex	filename
-  33076	    220	   2676	  35972	   8c84	NUCLEO-G474RET6-Inverter_Pinout.elf
+  35388	    220	   2676	  38284	   958c	NUCLEO-G474RET6-Inverter_Pinout.elf
 Finished building: default.size.stdout
  
-Finished building: NUCLEO-G474RET6-Inverter_Pinout.list
- 
 
-11:25:15 Build Failed. 1 errors, 7 warnings. (took 739ms)
+11:09:46 Build Finished. 0 errors, 0 warnings. (took 182ms)
 

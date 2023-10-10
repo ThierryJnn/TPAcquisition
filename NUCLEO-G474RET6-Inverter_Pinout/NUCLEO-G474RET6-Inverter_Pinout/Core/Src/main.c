@@ -52,6 +52,7 @@ char uartRxBuffer[1];
 uint8_t it_uart2 = 0;
 char command[32];
 uint8_t idx=0;
+const uint8_t started[]="Bienvenue dans le Shell de controle de la MCC \r\n";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -100,7 +101,11 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+  HAL_UART_Transmit(&huart2, started, strlen(started), HAL_MAX_DELAY);
   HAL_UART_Receive_IT(&huart2, uartRxBuffer, 1);
 
   /* USER CODE END 2 */
