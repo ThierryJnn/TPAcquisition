@@ -12,9 +12,16 @@
 #include "gpio.h"
 #include "string.h"
 
+extern int Power;
 void stopMotor() {
     // Desactivez l'étage de puissance du moteur (code pour desactiver le moteur)
-
-    // Affichez le message "Power OFF" dans la console
-    HAL_UART_Transmit(&huart2, "Power OFF\r\n", strlen("Power OFF\r\n"), HAL_MAX_DELAY);
-}
+	if (Power==1){
+			Power=0;
+			// Affichez le message "Power OFF" dans la console
+			HAL_UART_Transmit(&huart2, "Power OFF\r\n", strlen("Power OFF\r\n"), HAL_MAX_DELAY);
+			return 0;
+		}
+		else {
+		}
+	    HAL_UART_Transmit(&huart2, "Moteur déjà éteint\r\n", strlen("Moteur déjà éteint\r\n"), HAL_MAX_DELAY);
+	}

@@ -3,6 +3,7 @@
 "./Core/Src/main.o"
 "./Core/Src/pinout.o"
 "./Core/Src/processCommand.o"
+"./Core/Src/speed.o"
 "./Core/Src/startMotor.o"
 "./Core/Src/stm32g4xx_hal_msp.o"
 "./Core/Src/stm32g4xx_hal_timebase_tim.o"

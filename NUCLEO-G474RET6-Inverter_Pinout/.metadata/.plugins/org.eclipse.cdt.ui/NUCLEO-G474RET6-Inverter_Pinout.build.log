@@ -1,10 +1,10 @@
-11:09:45 **** Incremental Build of configuration Debug for project NUCLEO-G474RET6-Inverter_Pinout ****
+10:16:17 **** Incremental Build of configuration Debug for project NUCLEO-G474RET6-Inverter_Pinout ****
 make -j12 all 
 arm-none-eabi-size   NUCLEO-G474RET6-Inverter_Pinout.elf 
    text	   data	    bss	    dec	    hex	filename
-  35388	    220	   2676	  38284	   958c	NUCLEO-G474RET6-Inverter_Pinout.elf
+  38768	    220	   2684	  41672	   a2c8	NUCLEO-G474RET6-Inverter_Pinout.elf
 Finished building: default.size.stdout
  
 
-11:09:46 Build Finished. 0 errors, 0 warnings. (took 182ms)
+10:16:17 Build Finished. 0 errors, 0 warnings. (took 199ms)
 

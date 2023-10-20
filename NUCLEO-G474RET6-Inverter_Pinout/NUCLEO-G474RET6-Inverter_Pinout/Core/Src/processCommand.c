@@ -7,12 +7,15 @@
 
 #include "adc.h"
 #include "tim.h"
+#include "speed.h"
 #include "usart.h"
 #include "gpio.h"
 #include "string.h"
 #include "pinout.h"
 #include "startMotor.h"
 #include "stopMotor.h"
+
+int Power=0;
 
 void processCommand(char* command) {
   if (strcmp(command, "help") == 0) {
@@ -28,12 +31,23 @@ void processCommand(char* command) {
   }
   if (strcmp(command, "start") == 0) {
 	  startMotor(); // Appeler la fonction startMotor
+	  speed(0,5,1,2);
 	  return 0;
   }
   if (strcmp(command, "stop") == 0) {
 	  stopMotor(); // Appeler la fonction stopMotor
+	  speed(0,5,1,2);
 	  return 0;
     }
+  if (strncmp(command, "speed", 5) == 0) {
+              // Extrait les quatre chiffres suivant "speed"
+              int digit1, digit2, digit3, digit4;
+              if (sscanf(command + 5, "%1d%1d%1d%1d", &digit1, &digit2, &digit3, &digit4) == 4) {
+                  speed(digit1, digit2, digit3, digit4);
+              } else {
+                  HAL_UART_Transmit(&huart2, "Format incorrect. Utilisation : speed <chiffre1><chiffre2><chiffre3><chiffre4>\r\n", strlen("Format incorrect. Utilisation : speed <chiffre1><chiffre2><chiffre3><chiffre4>\r\n"), HAL_MAX_DELAY);
+              }
+  }
   else {
 	  HAL_UART_Transmit(&huart2, "Command not found\r\n", strlen("Command not found\r\n"), HAL_MAX_DELAY);
   }
